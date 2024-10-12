@@ -1,0 +1,8 @@
+{
+  "**/*.{js,ts,tsx}": [
+    "pnpm run format:write",
+    "pnpm run lint:fix",
+    "pnpm run test"
+  ],
+  "**/*": "prettier --write --ignore-unknown"
+}

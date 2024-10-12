@@ -1,15 +1,42 @@
 {
-  "name": "@movie-fest/source",
-  "version": "0.0.0",
+  "name": "movie-fest",
+  "private": false,
+  "version": "0.1.0",
+  "description": "A movie fest project",
   "license": "MIT",
-  "scripts": {},
-  "private": true,
-  "dependencies": {},
+  "author": {
+    "email": "ferdiardiansa@gmail.com",
+    "name": "Ferdi Ardiansa",
+    "url": "https://github.com/itsferdiardiansa"
+  },
+  "keywords": [
+    "typescript",
+    "monorepo",
+    "github-actions",
+    "vue",
+    "nest"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "clear": "npx nx reset",
+    "clear:cache": "pnpm run clear -- --only-cache",
+    "format": "pnpm nx run-many -t format",
+    "format:write": "pnpm nx run-many -t format:write",
+    "lint": "pnpm nx run-many -t lint",
+    "lint:fix": "pnpm nx run-many -t lint:fix",
+    "test": "pnpm nx run-many -t test",
+    "test:coverage": "pnpm nx run-many -t test:coverage"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@nx/js": "20.0.0",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "nx": "20.0.0",
     "prettier": "^2.6.2",
     "tslib": "^2.3.0",
@@ -17,5 +44,6 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
 }
