@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/Form/Select will click and select item then running toggle dropdown 1`] = `
+<div
+  class="ss-control--input"
+>
+  <div
+    class="ss-select"
+  >
+    <div
+      class="ss-select--button"
+      tabindex="0"
+    >
+      <span
+        class="button-label"
+      >
+        Alterbridge
+      </span>
+      <span
+        class="button-icon"
+      >
+        <svg
+          class="h-4"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="ss-select--dropdown slide-top-enter-from slide-top-leave-from slide-top-leave-active"
+      style=""
+    >
+      <ul
+        class="dropdown-list"
+      >
+        
+        <li
+          class="dropdown-item"
+        >
+          Muse
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Alterbridge
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Lamb of God
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Erra
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Architects
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`common/Form/Select will render and match snapshot 1`] = `
+<div
+  class="ss-control--input"
+>
+  <div
+    class="ss-select"
+  >
+    <div
+      class="ss-select--button"
+      tabindex="0"
+    >
+      <span
+        class="button-label"
+      >
+        Please select
+      </span>
+      <span
+        class="button-icon"
+      >
+        <svg
+          class="h-4"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="ss-select--dropdown slide-top-enter-from slide-top-enter-active"
+      style="display: none;"
+    >
+      <ul
+        class="dropdown-list"
+      >
+        
+        <li
+          class="dropdown-item"
+        >
+          Muse
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Alterbridge
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Lamb of God
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Erra
+        </li>
+        <li
+          class="dropdown-item"
+        >
+          Architects
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+`;

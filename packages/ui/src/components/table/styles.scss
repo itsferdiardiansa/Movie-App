@@ -1,0 +1,45 @@
+@keyframes #{$prefixClass}-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin fade-in-animation($duration: 0.4s) {
+  animation: #{$prefixClass}-fade-in $duration;
+}
+
+.#{$prefixClass}-table {
+  @apply w-full text-sm;
+
+  &--head {
+    @apply text-center;
+
+    th {
+      @apply uppercase leading-normal py-3 border-b-2 border-gray-700;
+    }
+  }
+
+  &--body {
+    &-row {
+      @apply hover:bg-primary-light cursor-pointer transition duration-500;
+
+      &:nth-child(2n) {
+        @apply bg-gray-100 hover:bg-primary-light;
+      }
+
+      &.selected {
+        @apply bg-blue-100;
+      }
+    }
+
+    &-col {
+      @apply text-gray-600 leading-normal relative py-3 break-all text-center;
+
+      @include fade-in-animation(0.4s);
+    }
+  }
+}

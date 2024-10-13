@@ -1,0 +1,9 @@
+.#{$prefixClass}-notification-root {
+  @apply w-auto h-auto fixed md:top-3 left-0 right-0 top-0 px-2 block;
+  z-index: 99999;
+
+  @include screen-md {
+    display: inline-table;
+    left: calc(100vw / 2.5);
+  }
+}
