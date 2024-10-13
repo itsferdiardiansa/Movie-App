@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Components/Badge > matches snapshot for default props 1`] = `
+"<div class="tx-badge rounded tx-badge--primary tx-badge--md">
+  <div class="tx-badge--wrapper">
+    <!--v-if-->
+    <div class="tx-badge--label">Test Badge</div>
+  </div>
+</div>"
+`;

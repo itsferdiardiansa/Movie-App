@@ -6,16 +6,17 @@ import { mergeConfig } from 'vite'
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
+    getAbsolutePath('@storybook/addon-actions'),
+    getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
+    '@storybook/addon-docs',
     '@chromatic-com/storybook',
   ],
-
   framework: {
     name: getAbsolutePath('@storybook/vue3-vite'),
     options: {},
   },
-
   viteFinal: async config => {
     const vueDocgenIndex = config.plugins.findIndex(
       ({ name }: any) => name === 'storybook:vue-docgen-plugin'
@@ -24,7 +25,6 @@ const config: StorybookConfig = {
 
     return mergeConfig(config, {})
   },
-
   docs: {},
 }
 

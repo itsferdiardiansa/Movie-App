@@ -1,0 +1,54 @@
+$variants: (
+  'light': (
+    'inverse': 'border-gray-600 text-gray-600',
+    'base': 'bg-gray-50 text-gray-600',
+    'icon': 'text-blue-400',
+  ),
+  'primary': (
+    'inverse': 'border-blue-600 text-blue-800',
+    'base': 'bg-blue-200 text-gray-700',
+    'icon': 'text-blue-400',
+  ),
+  'danger': (
+    'inverse': 'border-red-600 text-red-600',
+    'base': 'bg-red-200 text-gray-700 fill-current',
+    'icon': 'text-red-400',
+  ),
+  'warning': (
+    'inverse': 'border-yellow-600 text-yellow-600',
+    'base': 'bg-yellow-100 text-gray-600',
+    'icon': 'text-yellow-400',
+  ),
+  'success': (
+    'inverse': 'border-green-600 text-green-600',
+    'base': 'bg-green-200 text-gray-700',
+    'icon': 'text-green-400',
+  ),
+  'dark': (
+    'inverse': 'border-gray-600 text-gray-600',
+    'base': 'bg-dark text-gray-200',
+    'icon': 'text-gray-100',
+  ),
+);
+
+@mixin mergeChildContent($selectorClass, $childColor: 'text-gray-100') {
+  #{$selectorClass} {
+    @content;
+  }
+}
+
+@mixin variant {
+  @each $key, $tailwindClass in $variants {
+    @include mergeChildContent('&--#{$key}') {
+      @apply #{map-get($tailwindClass, 'base')} fill-current focus:outline-none;
+
+      &-inverse {
+        @apply bg-transparent border #{map-get($tailwindClass, 'inverse')};
+      }
+
+      .ss-notification--icon {
+        @apply #{map-get($tailwindClass, 'icon')} fill-current;
+      }
+    }
+  }
+}

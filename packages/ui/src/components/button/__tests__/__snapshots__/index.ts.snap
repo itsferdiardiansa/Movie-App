@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Components/Button > renders correctly (snapshot) 1`] = `
+"<button class="tx-btn rounded tx-btn--primary tx-btn--md">
+  <div class="tx-btn--wrapper">
+    <div class="tx-btn--label">Test Button</div>
+  </div>
+</button>"
+`;

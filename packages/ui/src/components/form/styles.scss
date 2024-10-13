@@ -1,0 +1,61 @@
+$defaultColWidth: 8.333333333333334;
+
+.#{$prefixClass}-form {
+  &-control {
+    @apply relative grid grid-cols-2 md:grid-cols-12 gap-1 md:gap-4 items-center;
+    margin-bottom: 24px;
+
+    &--label {
+      @apply col-span-2 font-semibold;
+    }
+
+    &--wrapper {
+      @apply w-full col-span-10;
+
+      &.col-full {
+        grid-column: 1 / full;
+      }
+
+      &--input,
+      &--textarea {
+        input {
+          @apply transition-all duration-500;
+        }
+      }
+    }
+
+    .#{$prefixClass}-control {
+      &--label {
+        width: 30%;
+      }
+
+      &--input {
+        input {
+          @apply focus:outline-none;
+        }
+      }
+    }
+
+    &.has-feedback {
+      // @apply items-baseline;
+      margin-bottom: 0px;
+      padding-bottom: 30px;
+
+      .#{$prefixClass}-control {
+        &--input {
+          input {
+            @apply border border-red-500 rounded duration-500;
+          }
+        }
+
+        &--textarea {
+          @apply border border-red-500 rounded duration-500;
+        }
+
+        &--info {
+          @apply absolute text-sm font-semibold text-red-500 my-1 md:my-2;
+        }
+      }
+    }
+  }
+}

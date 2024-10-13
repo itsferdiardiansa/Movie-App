@@ -1,0 +1,61 @@
+@mixin size {
+  &--xs {
+    @apply h-5 text-xs px-1;
+
+    &.dot {
+      @apply h-2 rounded-full;
+    }
+
+    svg {
+      @apply h-2.5;
+    }
+  }
+
+  &--sm {
+    @apply h-7 text-sm px-1.5;
+
+    &.dot {
+      @apply h-3 rounded-full;
+    }
+
+    svg {
+      @apply h-3;
+    }
+  }
+
+  &--md {
+    @apply h-9 px-2;
+
+    &.dot {
+      @apply h-4 rounded-full;
+    }
+
+    svg {
+      @apply h-3.5;
+    }
+  }
+
+  &--lg {
+    @apply h-12 text-lg px-2.5;
+
+    &.dot {
+      @apply h-5 rounded-full;
+    }
+
+    svg {
+      @apply h-4;
+    }
+  }
+
+  &--xl {
+    @apply h-14 text-xl px-3;
+
+    &.dot {
+      @apply h-6 rounded-full;
+    }
+
+    svg {
+      @apply h-5 mr-2;
+    }
+  }
+}

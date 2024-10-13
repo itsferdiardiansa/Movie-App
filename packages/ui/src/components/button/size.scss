@@ -1,0 +1,41 @@
+@mixin size {
+  &--xs {
+    @apply h-6 text-xs px-2;
+
+    svg {
+      @apply h-2.5;
+    }
+  }
+
+  &--sm {
+    @apply h-7 text-sm px-2.5;
+
+    svg {
+      @apply h-3;
+    }
+  }
+
+  &--base {
+    @apply h-9 px-3;
+
+    svg {
+      @apply h-3.5;
+    }
+  }
+
+  &--lg {
+    @apply h-12 text-lg px-4;
+
+    svg {
+      @apply h-4;
+    }
+  }
+
+  &--xl {
+    @apply h-14 text-xl px-5;
+
+    svg {
+      @apply h-5 mr-2;
+    }
+  }
+}

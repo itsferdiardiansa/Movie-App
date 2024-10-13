@@ -1,25 +1,49 @@
-import pluginVue from 'eslint-plugin-vue'
-import vueTsEslintConfig from '@vue/eslint-config-typescript'
-import pluginVitest from '@vitest/eslint-plugin'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import vue from 'eslint-plugin-vue'
+import typescript from '@typescript-eslint/eslint-plugin'
+import vueParser from 'vue-eslint-parser'
+import typescriptParser from '@typescript-eslint/parser'
 
 export default [
   {
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
+    ignores: ['node_modules/', 'dist/'],
+    files: ['src/**/*.{vue,ts}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      sourceType: 'module',
+      parser: vueParser,
+      parserOptions: {
+        parser: typescriptParser,
+        extraFileExtensions: ['.vue'],
+      },
+      globals: {
+        browser: true,
+        node: true,
+        es2021: true,
+      },
+    },
+    plugins: {
+      vue,
+      '@typescript-eslint': typescript,
+    },
+    rules: {
+      'vue/script-setup-uses-vars': 'error',
+      // '@typescript-eslint/no-unused-vars': [
+      //   'error',
+      //   {
+      //     argsIgnorePattern: '^_',
+      //     varsIgnorePattern: '^_',
+      //   },
+      // ],
+      // 'vue/no-unused-vars': 'error',
+      'vue/multi-word-component-names': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'no-mixed-spaces-and-tabs': 'off',
+      'no-multiple-empty-lines': 'off',
+      semi: 'off',
+      quotes: 'off',
+      'comma-dangle': 'off',
+      'object-curly-spacing': 'off',
+    },
   },
-
-  {
-    name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
-  },
-
-  ...pluginVue.configs['flat/essential'],
-  ...vueTsEslintConfig(),
-
-  {
-    ...pluginVitest.configs.recommended,
-    files: ['src/**/__tests__/*'],
-  },
-  skipFormatting,
 ]

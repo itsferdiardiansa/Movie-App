@@ -3,12 +3,21 @@ import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 import typescript2 from 'rollup-plugin-typescript2'
 import dts from 'vite-plugin-dts'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import sassDts from 'vite-plugin-sass-dts'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 export default defineConfig({
-  css: {},
-  assetsInclude: ['/sb-preview/runtime.js'],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/styles/global.scss";
+        `,
+      },
+    },
+  },
+  assetsInclude: ['/sb-preview/runtime.js', '**/*.md'],
   plugins: [
     vue(),
     cssInjectedByJsPlugin(),
@@ -17,6 +26,9 @@ export default defineConfig({
     }),
     sassDts(),
     cssInjectedByJsPlugin(),
+    viteStaticCopy({
+      targets: [{ src: 'src/styles/global.scss', dest: 'styles' }],
+    }),
     typescript2({
       check: false,
       include: ['src/components/**/*.vue'],
@@ -36,6 +48,10 @@ export default defineConfig({
       },
       external: ['vue'],
       output: {
+        assetFileNames: (assetInfo: any) => {
+          if (assetInfo.name === 'global.scss') return 'pomy-ui.min.css'
+          return assetInfo.name
+        },
         exports: 'named',
         globals: {
           vue: 'Vue',
