@@ -1,6 +1,6 @@
 {
   "name": "@pomy/ui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A shared component library",
   "private": true,
   "type": "module",
