@@ -44,7 +44,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@nrwl/storybook": "^19.8.4",
     "@nx/storybook": "^20.0.0",
-    "@nx/vite": "18.2.1",
+    "@nx/vite": "18.3.5",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.3",
