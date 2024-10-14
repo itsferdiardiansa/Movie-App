@@ -1,4 +1,3 @@
-/* eslint-disable */
 export { Input } from './input'
 export { Checkbox } from './checkbox'
 export { Select } from './select'

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { cloneVNode } from 'vue'
 
 export function cloneElement(element: any, restElements: any) {
