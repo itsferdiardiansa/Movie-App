@@ -38,30 +38,51 @@ The purpose of `@pomy/ui` is to provide developers with a reusable component lib
 
 To install `@pomy/ui` into your project, you can use the following commands:
 
-Using pnpm:  
+Using pnpm:
+
+```bash
 `pnpm add @pomy/ui`
+```
 
 ### Development
 
-To start the development environment and work on the components, run the following command:  
+To start the development environment and work on the components, run the following command:
+
+```bash
 `pnpm run dev`
+```
 
 This will start **Storybook** on port `9003`, allowing you to develop and preview components in isolation.
 
-To build the library for production, use the following command:  
+To build the library for production, use the following command:
+
+```bash
 `pnpm run build`
+```
 
-To run the unit tests for the components, use:  
+To run the unit tests for the components, use:
+
+```bash
 `pnpm run test`
+```
 
-For continuous testing, use:  
+For continuous testing, use:
+
+```bash
 `pnpm run test:watch`
+```
 
-To lint your project and ensure code consistency, run:  
+To lint your project and ensure code consistency, run:
+
+```bash
 `pnpm run lint`
+```
 
-To automatically fix linting issues, use:  
+To automatically fix linting issues, use:
+
+```bash
 `pnpm run lint:fix`
+```
 
 ### Folder Structure
 
